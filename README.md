@@ -1,1 +1,1 @@
-# Skilled-worker-app
+# Mobile Application for finding Skilled workers for daily chores

@@ -161,7 +161,9 @@ class CreateAccount extends StatelessWidget {
                           fontWeight: FontWeight.bold
                         ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/second');
+                    },
                   ),
                 ],
               ),

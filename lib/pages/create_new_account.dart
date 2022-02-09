@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccount extends StatelessWidget {
@@ -80,13 +81,83 @@ class CreateAccount extends StatelessWidget {
                       ),
                     ),
                   ),
-                  ElevatedButton(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0,20,280,5),
+                    child: Text(
+                      'EMAIL',
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Container(
+                    width: 600,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
+                        ),
+                        hintText: 'EMAIL',
+                        fillColor: Color(int.parse(("0xffececec"))),
+                        filled: true,
+
+
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0,20,220,5),
+                    child: Text(
+                      'PHONE NUMBER',
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Container(
+                    width: 600,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
+                        ),
+                        hintText: '91 | PHONE NUMBER',
+                        fillColor: Color(int.parse(("0xffececec"))),
+                        filled: true,
+
+
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0,20,280,5),
+                    child: Text(
+                      'OTP',
+                      textAlign: TextAlign.start,
+                    ),
+                  ),
+                  Container(
+                    width: 600,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
+                        ),
+                        hintText: 'OTP',
+                        fillColor: Color(int.parse(("0xffececec"))),
+                        filled: true,
+
+
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40,),
+                  TextButton(
+                    
                     style: ElevatedButton.styleFrom(
-                      primary: Color(int.parse("0xff210d41"))
+                      primary: Color(int.parse("0xff210d41")),
+                      padding: EdgeInsets.fromLTRB(40, 20, 40, 20)
                     ),
                     child: Text(
                         "Sign Up",
                         style: TextStyle(
+                          color: Colors.white,
                           fontWeight: FontWeight.bold
                         ),
                     ),

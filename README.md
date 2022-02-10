@@ -9,4 +9,14 @@ Tasks Done:
 3. Login Page UI
 4. Sign in -> Sign Up
 5. Sign Up -> Settings
-6. 
+
+
+
+Pending
+1. Feedback
+
+Next Week
+1. Register as Worker Form
+2. Profile Page
+3. Login SignUp Firebase integration
+4. Notification , Help , About

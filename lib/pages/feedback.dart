@@ -4,6 +4,7 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:skilled_worker_app/pages/settings.dart';
 import 'package:skilled_worker_app/pages/create_new_account.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:skilled_worker_app/pages/bottom_navigation.dart';
 
 class FeedbackPage extends StatefulWidget {
   const FeedbackPage({Key? key}) : super(key: key);
@@ -116,40 +117,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
         ),
 
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF210D41),
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Color(0xFFAEBEC9),
-        iconSize: 30,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() {
-          currentIndex = index;
-        }),
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Color(0xFF210D41),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.forum),
-            label: 'Chats',
-            backgroundColor: Color(0xFF210D41),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-            backgroundColor: Color(0xFF210D41),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Color(0xFF210D41),
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigation()
     );;
   }
 }

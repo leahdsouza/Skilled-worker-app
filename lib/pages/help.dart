@@ -44,7 +44,7 @@ class _HelpPageState extends State<HelpPage> {
         ),
 
       ),
-      bottomNavigationBar: BottomNavigation()
+      // bottomNavigationBar: BottomNavigation()
     );
   }
 

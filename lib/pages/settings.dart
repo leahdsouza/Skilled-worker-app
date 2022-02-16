@@ -51,7 +51,7 @@ class _SettingPageState extends State<SettingPage> {
                     leading: Icon(Icons.notifications,
                         color: Color(0xFF210D41)),
                     onPressed: (BuildContext context) {
-                      CreateAccount();
+                      Navigator.pushNamed(context, '/notifications');
                     },
                   ),
                   SettingsTile(

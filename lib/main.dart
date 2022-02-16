@@ -5,6 +5,7 @@ import 'package:skilled_worker_app/pages/settings.dart';
 import 'package:skilled_worker_app/pages/login.dart';
 import 'package:skilled_worker_app/pages/feedback.dart';
 import 'package:skilled_worker_app/pages/help.dart';
+import 'package:skilled_worker_app/pages/notifications.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,7 +16,8 @@ void main() {
       '/': (context)=> CreateAccount(),
       '/settings': (context) => SettingPage(),
       '/feedback': (context) => FeedbackPage(),
-      '/help': (context) => HelpPage()
+      '/help': (context) => HelpPage(),
+      '/notifications': (context) => Notifications()
     },
   ));
 }

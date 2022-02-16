@@ -162,7 +162,7 @@ class CreateAccount extends StatelessWidget {
                         ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/second');
+                      Navigator.pushNamed(context, '/settings');
                     },
                   ),
                 ],

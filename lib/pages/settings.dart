@@ -59,7 +59,7 @@ class _SettingPageState extends State<SettingPage> {
                     leading: Icon(Icons.help,
                         color: Color(0xFF210D41)),
                     onPressed: (BuildContext context) {
-                      CreateAccount();
+                      Navigator.pushNamed(context, '/help');
                     },
                   ),
                   SettingsTile(
@@ -67,7 +67,7 @@ class _SettingPageState extends State<SettingPage> {
                     leading: Icon(Icons.feedback,
                         color: Color(0xFF210D41)),
                     onPressed: (BuildContext context) {
-                      CreateAccount();
+                      Navigator.pushNamed(context, '/feedback');
                     },
                   ),
                   SettingsTile(

@@ -10,7 +10,7 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
-  int currentIndex = 3;
+  int currentIndex = 2;
   final screens = [
     // HomePage(),
     // ChatPage(),

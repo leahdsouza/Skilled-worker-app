@@ -43,7 +43,7 @@ class _SettingPageState extends State<SettingPage> {
                     leading: Icon(Icons.how_to_reg,
                         color: Color(0xFF210D41)),
                     onPressed: (BuildContext context) {
-                      CreateAccount();
+                      Navigator.pushNamed(context, '/registerWorker');
                     },
                   ),
                   SettingsTile(

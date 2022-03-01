@@ -6,12 +6,14 @@ import 'package:skilled_worker_app/pages/login.dart';
 import 'package:skilled_worker_app/pages/feedback.dart';
 import 'package:skilled_worker_app/pages/help.dart';
 import 'package:skilled_worker_app/pages/notifications.dart';
+import 'package:skilled_worker_app/pages/register_worker.dart';
 
 void main() {
   runApp(MaterialApp(
     initialRoute: '/login',
 
     routes:{
+      '/registerWorker':(context) => RegisterWorker(),
       '/login': (context) => Login(),
       '/': (context)=> CreateAccount(),
       '/settings': (context) => SettingPage(),

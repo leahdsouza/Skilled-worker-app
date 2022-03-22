@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:skilled_worker_app/pages/settings.dart';
-import 'package:skilled_worker_app/pages/bottom_navigation.dart';
+import 'package:skilled_worker_app/screens/settings/settings.dart';
+import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 import 'package:expandable/expandable.dart';
 
 

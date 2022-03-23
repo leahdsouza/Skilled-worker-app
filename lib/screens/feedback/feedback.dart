@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
-import 'package:skilled_worker_app/pages/settings.dart';
-import 'package:skilled_worker_app/pages/create_new_account.dart';
+import 'package:skilled_worker_app/screens/settings/settings.dart';
+import 'package:skilled_worker_app/screens/authenticate/create_new_account.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:skilled_worker_app/pages/bottom_navigation.dart';
+import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 
 class FeedbackPage extends StatefulWidget {
   const FeedbackPage({Key? key}) : super(key: key);

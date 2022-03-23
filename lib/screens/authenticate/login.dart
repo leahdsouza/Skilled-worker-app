@@ -13,7 +13,7 @@ class Login extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image:AssetImage('images/LoginBg.png'),
+                  image:AssetImage('assets/images/LoginBg.png'),
                   fit: BoxFit.cover,
               )
             ),

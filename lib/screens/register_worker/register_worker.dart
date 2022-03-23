@@ -19,7 +19,8 @@ class _RegisterWorkerState extends State<RegisterWorker> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset : false,
-        appBar: AppBar(
+
+      appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color(0xFF210D41),
         title: Text("Register as Worker", style: TextStyle(fontSize: 22 , color: Colors.white, fontWeight: FontWeight.bold)),
@@ -130,7 +131,7 @@ class _RegisterWorkerState extends State<RegisterWorker> {
                   ],
                 ),
               ),
-              SizedBox(height: 380,),
+              SizedBox(height: 230,),
               TextButton(
 
                 style: ElevatedButton.styleFrom(

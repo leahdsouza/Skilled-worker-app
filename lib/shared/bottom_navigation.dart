@@ -9,7 +9,16 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int currentIndex = 3;
+  int currentIndex = 2;
+
+  final screens = [
+    '/home',
+    '/settings',
+    '/settings',
+    '/profile'
+
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +32,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
       currentIndex: currentIndex,
       onTap: (index) => setState(() {
         currentIndex = index;
+        print(currentIndex);
+        Navigator.pushNamed(context, screens[currentIndex]);
       }),
       items: [
         BottomNavigationBarItem(
@@ -44,6 +55,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           icon: Icon(Icons.person),
           label: 'Profile',
           backgroundColor: Color(0xFF210D41),
+
         ),
       ],
     );

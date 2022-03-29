@@ -11,6 +11,7 @@ import 'package:skilled_worker_app/screens/notifications/notifications.dart';
 import 'package:skilled_worker_app/screens/register_worker/register_worker.dart';
 import 'package:skilled_worker_app/screens/profile/profile.dart';
 import 'package:skilled_worker_app/screens/home/home.dart';
+import 'package:skilled_worker_app/screens/home/home_state.dart';
 import 'package:skilled_worker_app/screens/worker_list/worker_list.dart';
 
 class Wrapper extends StatelessWidget {
@@ -24,7 +25,7 @@ class Wrapper extends StatelessWidget {
       return Authenticate();
     } else {
       return MaterialApp(
-        initialRoute: '/home',
+        initialRoute: '/homeState',
 
         routes: {
           '/registerWorker': (context) => RegisterWorker(),
@@ -33,7 +34,7 @@ class Wrapper extends StatelessWidget {
           '/help': (context) => HelpPage(),
           '/notifications': (context) => Notifications(),
           '/profile': (context) => Profile(),
-          '/home': (context) => Home(),
+          '/homeState': (context) => HomeState(),
           '/workerlist': (context) => WorkerListScreen(),
         },
       );

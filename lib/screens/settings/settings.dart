@@ -90,7 +90,7 @@ class _SettingPageState extends State<SettingPage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigation(),
+      // bottomNavigationBar: BottomNavigation(currentIndex: 2,),
     );
   }
 }

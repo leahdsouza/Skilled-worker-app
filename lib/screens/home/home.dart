@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-      bottomNavigationBar: BottomNavigation(),
+      // bottomNavigationBar: BottomNavigation(currentIndex: 0,),
     );
   }
 }

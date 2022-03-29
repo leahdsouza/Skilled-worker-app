@@ -30,7 +30,7 @@ class _WorkerListScreenState extends State<WorkerListScreen> {
         backgroundColor: Color(0xFF210D41),
         title: Text("Workers", style: TextStyle(fontSize: 22 , color: Colors.white, fontWeight: FontWeight.bold)),
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: BottomNavigation(currentIndex: 0,),
       body: Column(
         children: [
           Expanded(

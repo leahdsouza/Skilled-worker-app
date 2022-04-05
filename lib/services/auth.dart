@@ -7,6 +7,8 @@ class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  // sign in using phone number
+
 
   // create a user obj
 

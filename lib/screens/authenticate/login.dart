@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:skilled_worker_app/shared/loading.dart';
 import 'package:skilled_worker_app/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:skilled_worker_app/models/user.dart';
+
 
 class Login extends StatefulWidget {
 
@@ -15,17 +18,59 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  final AuthService _auth = AuthService();
+  // final AuthService _auth = AuthService();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   final _formkey = GlobalKey<FormState>();
 
   bool loading = false;
 
-  String email = '';
+  // String email = '';
+  //
+  // String password = '';
+  //
+  // String error = '';
 
-  String password = '';
+  String phone = '';
+  String otp = '';
 
-  String error = '';
+  String verificationIDReceived = "";
+
+  bool otpCodeVisible = false;
+
+  void verifyNumber  (){
+    _auth.verifyPhoneNumber(
+        phoneNumber: phone,
+        verificationCompleted: (PhoneAuthCredential credential) async{
+          await _auth.signInWithCredential(credential).then((value){
+            print("You are logged in Successfully");
+          });
+        },
+        verificationFailed: (FirebaseAuthException exception){
+          print(exception.message);
+        },
+        codeSent: (String verificationId, int? resendToken){
+          verificationIDReceived = verificationId;
+          otpCodeVisible = true;
+          setState(() {
+
+          });
+        },
+        codeAutoRetrievalTimeout: (String verificationID){
+
+        }
+    );
+
+  }
+
+  void verifyCode() async{
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationIDReceived, smsCode: otp);
+
+    await _auth.signInWithCredential(credential).then((value) {
+      print("you are logged in successfully");
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -66,24 +111,25 @@ class _LoginState extends State<Login> {
                   Container(
                     width: 350,
                     child: TextFormField(
+                      keyboardType: TextInputType.phone,
                       onChanged: (val){
                         setState(() {
-                          email = val;
+                          phone = val;
                         });
                       },
-                      validator: (String? val) {
-                        if (val!.isEmpty){
-                          return "Enter an email";
-                        }
-                        else{
-                          return null;
-                        }
-                      } ,
+                      // validator: (String? val) {
+                      //   if (val!.isEmpty){
+                      //     return "Enter an email";
+                      //   }
+                      //   else{
+                      //     return null;
+                      //   }
+                      // } ,
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
                         ),
-                        hintText: 'Email',
+                        hintText: 'Phone Number',
                         fillColor: Color(int.parse(("0xffececec"))),
                         filled: true,
 
@@ -92,29 +138,32 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(height: 20,),
-                  Container(
-                    width: 350,
-                    child: TextFormField(
-                      obscureText: true,
-                      onChanged: (val){
-                        setState(() {
-                          password = val;
-                        });
+                  Visibility(
+                    visible: otpCodeVisible,
+                    child: Container(
+                      width: 350,
+                      child: TextFormField(
+                        obscureText: true,
+                        onChanged: (val){
+                          setState(() {
+                            otp = val;
+                          });
 
-                      },
-                      validator: (String? val) => val!.length < 6 ? "Enter a password with chars >6": null,
-                      decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
+                        },
+                        // validator: (String? val) => val!.length < 6 ? "Enter a password with chars >6": null,
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
+                          ),
+                          hintText: 'OTP',
+                          fillColor: Color(int.parse(("0xffececec"))),
+                          filled: true,
+
+
                         ),
-                        hintText: 'Password',
-                        fillColor: Color(int.parse(("0xffececec"))),
-                        filled: true,
-
-
                       ),
-                    ),
 
+                    ),
                   ),
                   SizedBox(height: 30,),
                   // Padding(
@@ -141,7 +190,7 @@ class _LoginState extends State<Login> {
                         padding: EdgeInsets.fromLTRB(40, 20, 40, 20)
                     ),
                     child: Text(
-                      "Sign In",
+                      otpCodeVisible? "Login" : "Verify",
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold
@@ -149,22 +198,29 @@ class _LoginState extends State<Login> {
                     ),
                     onPressed: () async {
 
-                      if (_formkey.currentState!.validate()){
-
-                        setState(() {
-                          loading = true;
-                        });
-                        dynamic result =await _auth.signInWithEmailAndPassword(email, password);
-
-                        if (result == null ){
-                          setState(() {
-
-                            error = "Could not sign in , Try again !";
-                            loading = false;
-                          });
-                        }
-
+                      if (otpCodeVisible){
+                        verifyCode();
+                      }else{
+                        verifyNumber();
                       }
+
+                      verifyNumber();
+                      // if (_formkey.currentState!.validate()){
+                      //
+                      //   setState(() {
+                      //     loading = true;
+                      //   });
+                      //   dynamic result =await _auth.signInWithEmailAndPassword(email, password);
+                      //
+                      //   if (result == null ){
+                      //     setState(() {
+                      //
+                      //       error = "Could not sign in , Try again !";
+                      //       loading = false;
+                      //     });
+                      //   }
+                      //
+                      // }
 
                     },
                   ),

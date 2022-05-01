@@ -4,6 +4,7 @@ import 'package:skilled_worker_app/shared/loading.dart';
 import 'package:skilled_worker_app/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:skilled_worker_app/models/user.dart';
+import 'package:skilled_worker_app/services/database.dart';
 
 
 class Login extends StatefulWidget {
@@ -18,7 +19,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  // final AuthService _auth = AuthService();
+  final AuthService authService = AuthService();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   final _formkey = GlobalKey<FormState>();
@@ -66,9 +67,14 @@ class _LoginState extends State<Login> {
   void verifyCode() async{
     PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationIDReceived, smsCode: otp);
 
-    await _auth.signInWithCredential(credential).then((value) {
-      print("you are logged in successfully");
-    });
+    UserCredential userCredential =await _auth.signInWithCredential(credential);
+
+    User user = userCredential.user!;
+
+    MyUser? new_user = authService.userFromFirebase(user)!;
+
+    await DatabaseService(uid: new_user.uid).updateUserData(" ", " ", phone);
+
   }
 
 

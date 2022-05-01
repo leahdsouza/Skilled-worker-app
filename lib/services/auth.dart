@@ -12,14 +12,14 @@ class AuthService {
 
   // create a user obj
 
-  MyUser? _userFromFirebase ( User user){
+  MyUser? userFromFirebase ( User user){
     return user!= null ? MyUser(uid: user.uid) : null;
   }
 
   // auth changes user streams
 
   Stream<MyUser?> get user{
-    return _auth.authStateChanges().map((User? user) => _userFromFirebase(user!));
+    return _auth.authStateChanges().map((User? user) => userFromFirebase(user!));
   }
 
   // sign in anon
@@ -28,7 +28,7 @@ class AuthService {
       UserCredential userCredential = await _auth.signInAnonymously();
       User user = userCredential.user!;
 
-      return _userFromFirebase(user);
+      return userFromFirebase(user);
 
 
     }catch(e){
@@ -47,7 +47,7 @@ class AuthService {
       UserCredential result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       User user = result.user!;
 
-      return _userFromFirebase(user);
+      return userFromFirebase(user);
     }catch(e){
       print(e.toString());
       return null;
@@ -65,7 +65,7 @@ class AuthService {
 
       // await DatabaseService(uid: user.uid).updateUserData("0", "New crew member", 100);
 
-      return _userFromFirebase(user);
+      return userFromFirebase(user);
     }catch(e){
       print(e.toString());
       return null;

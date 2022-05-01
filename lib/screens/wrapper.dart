@@ -19,13 +19,21 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    String initial = '/homeState';
+
+
     final user = Provider.of<MyUser?>(context);
+
+
+
+
 
     if (user == null) {
       return Authenticate();
     } else {
       return MaterialApp(
-        initialRoute: '/homeState',
+        initialRoute: initial,
 
         routes: {
           '/registerWorker': (context) => RegisterWorker(),

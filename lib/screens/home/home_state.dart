@@ -16,7 +16,7 @@ class _HomeStateState extends State<HomeState> {
 
   int currentIndex = 0;
 
-  final screens = [
+  final screens = <Widget>[
     Home(),
     SettingPage(),
     SettingPage(),

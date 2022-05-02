@@ -1,15 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:skilled_worker_app/screens/profile/profile.dart';
+import 'package:skilled_worker_app/screens/settings/settings.dart';
+
+import '../screens/home/home.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  int currentIndex = 0;
+  BottomNavigation({required this.currentIndex});
 
   @override
   _BottomNavigationState createState() => _BottomNavigationState();
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  int currentIndex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
       unselectedItemColor: Color(0xFFAEBEC9),
       iconSize: 30,
       showUnselectedLabels: false,
-      currentIndex: currentIndex,
+      currentIndex: widget.currentIndex,
       onTap: (index) => setState(() {
-        currentIndex = index;
+        widget.currentIndex = index;
+
       }),
       items: [
         BottomNavigationBarItem(
@@ -44,6 +49,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           icon: Icon(Icons.person),
           label: 'Profile',
           backgroundColor: Color(0xFF210D41),
+
         ),
       ],
     );

@@ -68,11 +68,10 @@ class _SettingPageState extends State<SettingPage> {
                     title: Text('About'),
                     leading: Icon(Icons.info,
                         color: Color(0xFF210D41)),
-                    // onPressed: (BuildContext context) async {
-                    //   // CreateAccount();
-                    //   await _auth.signOut();
-                    //
-                    // },
+                    onPressed: (BuildContext context) async {
+                      Navigator.pushNamed(context, '/about');
+
+                    },
                   ),
                     SettingsTile(
                       title: Text('Logout'),

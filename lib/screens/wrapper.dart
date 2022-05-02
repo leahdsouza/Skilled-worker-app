@@ -15,6 +15,8 @@ import 'package:skilled_worker_app/screens/home/home.dart';
 import 'package:skilled_worker_app/screens/home/home_state.dart';
 import 'package:skilled_worker_app/screens/worker_list/worker_list.dart';
 
+import 'package:skilled_worker_app/screens/about/about.dart';
+
 class Wrapper extends StatelessWidget {
   const Wrapper({Key? key}) : super(key: key);
 
@@ -46,6 +48,7 @@ class Wrapper extends StatelessWidget {
           '/profileWrapper': (context) => ProfileWrapper(),
           '/homeState': (context) => HomeState(),
           '/workerlist': (context) => WorkerListScreen(),
+          '/about':(context) => About(),
         },
       );
     }

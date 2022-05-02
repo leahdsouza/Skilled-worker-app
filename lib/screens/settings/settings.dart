@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:skilled_worker_app/screens/authenticate/create_new_account.dart';
 import 'package:skilled_worker_app/shared/bottom_navigation.dart';
+import 'package:skilled_worker_app/services/auth.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class SettingPage extends StatefulWidget {
 
 class _SettingPageState extends State<SettingPage> {
   // int currentIndex = 2;
-
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,17 +68,28 @@ class _SettingPageState extends State<SettingPage> {
                     title: Text('About'),
                     leading: Icon(Icons.info,
                         color: Color(0xFF210D41)),
-                    onPressed: (BuildContext context) {
-                      CreateAccount();
+                    onPressed: (BuildContext context) async {
+                      Navigator.pushNamed(context, '/about');
+
                     },
                   ),
+                    SettingsTile(
+                      title: Text('Logout'),
+                      leading: Icon(Icons.logout,
+                          color: Color(0xFF210D41)),
+                      onPressed: (BuildContext context) async{
+                        await _auth.signOut();
+                      },
+
+                    ),
+
                 ],
               ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigation(),
+      // bottomNavigationBar: BottomNavigation(currentIndex: 2,),
     );
   }
 }

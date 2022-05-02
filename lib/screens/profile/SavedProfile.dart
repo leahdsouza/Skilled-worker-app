@@ -9,17 +9,18 @@ import 'package:skilled_worker_app/shared/loading.dart';
 
 
 
-class Profile extends StatefulWidget {
+class SavedProfile extends StatefulWidget {
 
   final Function toggleView;
 
-  Profile({required this.toggleView });
-
+  SavedProfile({required this.toggleView });
   @override
-  State<Profile> createState() => _ProfileState();
+  State<SavedProfile> createState() => _SavedProfileState();
+
+
 }
 
-class _ProfileState extends State<Profile> {
+class _SavedProfileState extends State<SavedProfile> {
 
   bool loading = false;
   String name = '',
@@ -119,6 +120,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 600,
                               child: TextFormField(
+                                enabled: false,
                                 controller: nameController,
 
                                 // onChanged: (val){
@@ -179,6 +181,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 600,
                               child: TextField(
+                                enabled: false,
                                 decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Color(int.parse(("0xffececec"))),width: 2.0),
@@ -201,6 +204,7 @@ class _ProfileState extends State<Profile> {
                             Container(
                               width: 600,
                               child: TextFormField(
+                                enabled: false,
                                 controller: addressController,
                                 // onChanged: (val){
                                 //   setState(() {
@@ -236,36 +240,32 @@ class _ProfileState extends State<Profile> {
                                     padding: EdgeInsets.fromLTRB(40, 20, 40, 20)
                                 ),
                                 child: Text(
-                                  "SAVE",
+                                  "EDIT",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold
                                   ),
                                 ),
-                                onPressed: () async{
+                                onPressed: () {
 
-                                  if (snapshot.data?.name != ' ' && snapshot.data?.address != ' '){
-                                    addressController.text = '${snapshot.data?.address}';
-                                    nameController.text = '${snapshot.data?.name}';
+                                 widget.toggleView();
 
-                                  }
+                                  // if (_formkey.currentState!.validate()){
+                                  //
+                                  //   // setState(() {
+                                  //   //   loading = true;
+                                  //   // });
+                                  //
+                                  //   print(addressController.text);
+                                  //   print(nameController.text);
+                                  //
+                                  //   final user = Provider.of<MyUser?>(context,listen: false);
+                                  //
+                                  //   print(user?.uid);
+                                  //
+                                  //   await DatabaseService(uid: user?.uid).updateUserData(addressController.text, nameController.text, '${snapshot.data?.phoneNumber}');
 
-                                  if (_formkey.currentState!.validate()){
 
-                                    // setState(() {
-                                    //   loading = true;
-                                    // });
-
-                                    print(addressController.text);
-                                    print(nameController.text);
-
-                                    final user = Provider.of<MyUser?>(context,listen: false);
-
-                                    print(user?.uid);
-
-                                    await DatabaseService(uid: user?.uid).updateUserData(addressController.text, nameController.text, '${snapshot.data?.phoneNumber}');
-
-                                    widget.toggleView();
                                     // if (result == null ){
                                     //   setState(() {
                                     //     error = "Enter valid Email";
@@ -276,7 +276,7 @@ class _ProfileState extends State<Profile> {
                                   }
 
 
-                                }
+                                // }
 
                             ),
                             SizedBox(height: 20,),

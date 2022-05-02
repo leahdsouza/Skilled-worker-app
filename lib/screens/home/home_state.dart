@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skilled_worker_app/screens/profile/profile_wrapper.dart';
 import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 
 import '../profile/profile.dart';
@@ -20,7 +21,7 @@ class _HomeStateState extends State<HomeState> {
     Home(),
     SettingPage(),
     SettingPage(),
-    Profile(),
+    ProfileWrapper(),
 
 
   ];

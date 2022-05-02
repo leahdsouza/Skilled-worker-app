@@ -1,5 +1,10 @@
+
+
+import 'package:provider/provider.dart';
 import 'package:skilled_worker_app/models/user_detail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../models/user.dart';
 
 class DatabaseService {
 
@@ -16,6 +21,8 @@ class DatabaseService {
       "phoneNumber":phoneNumber,
     }); 
   }
+
+
 
   // // brew list from snapshots
   // List<UserDetail> _brewListFromSnapshots(QuerySnapshot snapshot){
@@ -64,6 +71,7 @@ class DatabaseService {
         print('Document exists on the database');
         print('Document data:${documentSnapshot.data()}');
     }
+
 
 
 

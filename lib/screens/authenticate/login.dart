@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:skilled_worker_app/shared/loading.dart';
@@ -73,7 +74,16 @@ class _LoginState extends State<Login> {
 
     MyUser? new_user = authService.userFromFirebase(user)!;
 
-    await DatabaseService(uid: new_user.uid).updateUserData(" ", " ", phone);
+    var documentSnapshot = await FirebaseFirestore.instance.collection("users").doc(new_user.uid).get();
+
+    print("${documentSnapshot.data()}");
+
+    if (documentSnapshot == null || !documentSnapshot.exists){
+      await DatabaseService(uid: new_user.uid).updateUserData(" ", " ", phone);
+    }
+
+
+
 
   }
 

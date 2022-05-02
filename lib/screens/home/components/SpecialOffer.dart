@@ -27,13 +27,13 @@ class SpecialOffer extends StatelessWidget {
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/electrician.jpg",
+                image: "assets/images/Painter.jpg",
                 category: "Painter",
                 location: "Mumbai",
                 press: () {},
               ),
               SpecialOfferCard(
-                image: "assets/images/Painter.jpg",
+                image: "assets/images/electrician.jpg",
                 category: "Electrician",
                 location: "Mumbai",
                 press: () {},
@@ -65,7 +65,7 @@ class SpecialOfferCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 20),
       child: SizedBox(
-        width: 242,
+        width: 152,
         height: 100,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
@@ -73,7 +73,8 @@ class SpecialOfferCard extends StatelessWidget {
             children: [
               Image.asset(
                 image,
-                fit: BoxFit.cover,
+                width: 162,
+                height: 100,
               ),
               Container(
                 decoration: BoxDecoration(

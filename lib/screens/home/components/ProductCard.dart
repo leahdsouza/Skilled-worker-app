@@ -20,6 +20,7 @@ class ProductCard extends StatelessWidget {
       child: SizedBox(
         width: width,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             AspectRatio(aspectRatio: aspectRetion,
               child: Container(
@@ -28,46 +29,28 @@ class ProductCard extends StatelessWidget {
                   color: Colors.grey.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Image.asset(product.images[0]),
+                child: Image.asset(product.images[0],fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: 5,),
             Text(
-              product.title,
-              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),
-              maxLines: 2,
+              product.name,
+              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18,letterSpacing: 1.2),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "\₹${product.price}",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.blueAccent,
-                  ),
-                ),
-                InkWell(
-                  borderRadius: BorderRadius.circular(30),
-                  onTap: () {},
-                  child: Container(
-                    padding: EdgeInsets.all(8),
-                    width: 28,
-                    height: 28,
-                    decoration: BoxDecoration(
-                      color: product.isFavourite
-                          ? Colors.black.withOpacity(0.15)
-                          : Colors.black.withOpacity(0.1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset( "assets/icons/Heart Icon_2.svg",
-                      color: product.isFavourite
-                          ? Color(0xFFFF4848)
-                          : Color(0xFFDBDEE4),),
-                  ),
-                ),
-              ],
+            SizedBox(height: 1,),
+            Text(
+              product.title,
+              style: TextStyle(color: Colors.black,letterSpacing: 0.8),
+              maxLines: 2,
+
+            ),
+            Text(
+              "\₹${product.price}",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Colors.blueAccent,
+              ),
             ),
           ],
         ),

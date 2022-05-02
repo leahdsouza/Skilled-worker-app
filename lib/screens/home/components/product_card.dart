@@ -22,86 +22,133 @@ class Product {
     required this.description,
   });
 }
-class ProductCard extends StatelessWidget {
-  const ProductCard({
-    Key? key,
-    this.width = 140,
-    this.aspectRetio = 1.02,
-    required this.product,
-  }) : super(key: key);
 
-  final double width, aspectRetio;
-  final Product product;
+// Our demo Products
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 20),
-      child: SizedBox(
-        width: width,
-        child: GestureDetector(
-          onTap: () => {},
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AspectRatio(
-                aspectRatio: 1.02,
-                child: Container(
-                  padding: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Hero(
-                    tag: product.id.toString(),
-                    child: Image.asset(product.images[0]),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                product.title,
-                style: TextStyle(color: Colors.black),
-                maxLines: 2,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "\$${product.price}",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.blueAccent,
-                    ),
-                  ),
-                  InkWell(
-                    borderRadius: BorderRadius.circular(50),
-                    onTap: () {},
-                    child: Container(
-                      padding: EdgeInsets.all(8),
-                      height: 28,
-                      width: 28,
-                      decoration: BoxDecoration(
-                        color: product.isFavourite
-                            ? Colors.black.withOpacity(0.15)
-                            : Colors.black.withOpacity(0.1),
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.asset(
-                        "assets/icons/Heart Icon_2.svg",
-                        color: product.isFavourite
-                            ? Color(0xFFFF4848)
-                            : Color(0xFFDBDEE4),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+List<Product> demoProducts = [
+  Product(
+    id: 1,
+    images: [
+      "assets/images/drill.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "CARPENTER",
+    price: 150,
+    description: description,
+    rating: 4.8,
+    isFavourite: true,
+    isPopular: true,
+  ),
+  Product(
+    id: 2,
+    images: [
+      "assets/images/painter.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "PAINTER",
+    price: 300,
+    description: description,
+    rating: 4.1,
+    isPopular: true,
+  ),
+  Product(
+    id: 3,
+    images: [
+      "assets/images/electrician.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "ELECTRICIAN",
+    price: 200,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+    isPopular: true,
+  ),
+  Product(
+    id: 4,
+    images: [
+      "assets/images/plumber.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "PLUMBER",
+    price: 100,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+  ),
+  Product(
+    id: 5,
+    images: [
+      "assets/images/cleaning.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "CLEANING",
+    price: 100,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+  ),
+  Product(
+    id: 6,
+    images: [
+      "assets/images/maid.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "MAID",
+    price: 100,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+  ),
+  Product(
+    id: 7,
+    images: [
+      "assets/images/driver.png",
+    ],
+    colors: [
+      Color(0xFFF6625E),
+      Color(0xFF836DB8),
+      Color(0xFFDECB9C),
+      Colors.white,
+    ],
+    title: "DRIVER",
+    price: 100,
+    description: description,
+    rating: 4.1,
+    isFavourite: true,
+  ),
+];
+
+const String description =
+    "Service";
+

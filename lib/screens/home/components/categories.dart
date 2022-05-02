@@ -22,9 +22,7 @@ class Categories extends StatelessWidget {
               (index) => CategoryCard(
             icon: categories[index]["icon"],
             text: categories[index]["text"],
-            press: () {
-              Navigator.pushNamed(context, '/workerlist');
-            },
+            press: () {},
           ),
         ),
       ),

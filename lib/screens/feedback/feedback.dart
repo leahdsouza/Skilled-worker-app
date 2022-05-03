@@ -5,10 +5,13 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:skilled_worker_app/screens/settings/settings.dart';
 import 'package:skilled_worker_app/screens/authenticate/create_new_account.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:skilled_worker_app/services/location.dart';
 import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 import 'package:skilled_worker_app/services/FeedbackDb.dart';
-
+import 'package:skilled_worker_app/services/location.dart';
+import 'package:geocoding/geocoding.dart';
 import '../../models/user.dart';
+import 'package:skilled_worker_app/screens/worker_list/distance.dart';
 
 class FeedbackPage extends StatefulWidget {
   const FeedbackPage({Key? key}) : super(key: key);
@@ -156,7 +159,17 @@ class _FeedbackPageState extends State<FeedbackPage> {
                         user?.uid
                       );
 
+                      // List<Location> locations = await locationFromAddress('22 Dopp Rly Stn Silver Line Chs D G Mkt Bhayander , Mumbai,Mumbai,401105,India');
+                      // print(locations[0].latitude);
                       // await db.addWorkerData();
+
+                      // Locationdb loc = new Locationdb();
+                      //
+                      // await loc.getAllWorkers();
+                      // final data = await convertWorkerDataToDestination("Maid");
+                      // print(data);
+
+                    
 
                       Future.delayed(Duration.zero, () => showAlert(context));
                       Navigator.pop(context, 'Feedback Added');

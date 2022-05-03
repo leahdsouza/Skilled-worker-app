@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:skilled_worker_app/models/worker.dart';
+import 'package:skilled_worker_app/screens/worker_list/Destination.dart';
 
 
 class WorkerCard extends StatefulWidget {
 
-  final Worker worker;
+  final Destination worker;
   final int index;
 
   WorkerCard({required this.worker, required this.index});
@@ -56,18 +57,19 @@ class _WorkerCardState extends State<WorkerCard> {
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          WidgetSpan(
-                            child: Icon(Icons.location_on_sharp, size: 22),
-                          ),
-                          // TextSpan(
-                          //   text: widget.worker.name,
-                          // ),
-                        ],
-                      ),
+                    Row(
+                      children: [
+                        Icon(Icons.location_on_sharp, size: 22),
+                        SizedBox(width: 6,),
+                        Text(
+                          "${widget.worker.distance.toStringAsFixed(2)} Km",
+                          style: TextStyle(fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
+
                     SizedBox(height: 5,),
                     Text("\₹${widget.worker.rate}",
                       style: TextStyle(fontWeight: FontWeight.bold,

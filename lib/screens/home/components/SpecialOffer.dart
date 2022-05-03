@@ -36,7 +36,13 @@ class SpecialOffer extends StatelessWidget {
                 image: "assets/images/electrician.jpg",
                 category: "Electrician",
                 location: "Mumbai",
-                press: () {},
+                press: () {
+
+                  Navigator.pushNamed(context, '/workerlist',arguments: {
+                    'category': "Electrician"
+                  });
+
+                },
               ),
               SizedBox(width: 20,),
             ],
@@ -64,49 +70,52 @@ class SpecialOfferCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 20),
-      child: SizedBox(
-        width: 152,
-        height: 100,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Stack(
-            children: [
-              Image.asset(
-                image,
-                width: 162,
-                height: 100,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF343434).withOpacity(0.4),
-                          Color(0xFF343434).withOpacity(0.15),
-                        ])
+      child: GestureDetector(
+        onTap: press,
+        child: SizedBox(
+          width: 152,
+          height: 100,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Stack(
+              children: [
+                Image.asset(
+                  image,
+                  width: 162,
+                  height: 100,
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: 15,
-                    vertical: 10),
-                child: Text.rich(TextSpan(
-                    style: TextStyle(color: Colors.white),
-                    children: [
-                      TextSpan(
-                        text: "$category\n",
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF343434).withOpacity(0.4),
+                            Color(0xFF343434).withOpacity(0.15),
+                          ])
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 10),
+                  child: Text.rich(TextSpan(
+                      style: TextStyle(color: Colors.white),
+                      children: [
+                        TextSpan(
+                          text: "$category\n",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      TextSpan(text: "$location"),
-                    ]
-                ),
-                ),
-              )
-            ],
+                        TextSpan(text: "$location"),
+                      ]
+                  ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

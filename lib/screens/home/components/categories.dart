@@ -3,6 +3,15 @@ import 'package:flutter/material.dart';
 
 
 class Categories extends StatelessWidget {
+
+  // Map<String, String> workerMap = {
+  //   "Pest Control": "Pest",
+  //   "Carpenter": "Carpenter",
+  //   "Electrician":"Electrician",
+  //   "Painter":"Painter",
+  //   "Plumber":"Plumber"
+  // };
+
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
@@ -22,7 +31,11 @@ class Categories extends StatelessWidget {
               (index) => CategoryCard(
             icon: categories[index]["icon"],
             text: categories[index]["text"],
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, '/workerlist',arguments: {
+                'category': categories[index]["text"]
+              });
+            },
           ),
         ),
       ),

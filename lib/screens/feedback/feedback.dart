@@ -155,6 +155,9 @@ class _FeedbackPageState extends State<FeedbackPage> {
                         ratingText,
                         user?.uid
                       );
+
+                      // await db.addWorkerData();
+
                       Future.delayed(Duration.zero, () => showAlert(context));
                       Navigator.pop(context, 'Feedback Added');
                     }

@@ -10,10 +10,16 @@ class SpecialOffer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionTitle(
-          text: "Special for you  ",
-          press: () {},
+        Text(
+          "    Special for you  ",
+          style: TextStyle(fontSize: 20,
+                          color: Color(0xff626262),
+                          fontWeight: FontWeight.w600,
+                          ),
+          
+          
         ),
         SizedBox(height: 20,),
         SingleChildScrollView(

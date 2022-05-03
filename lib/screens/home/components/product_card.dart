@@ -47,7 +47,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Shivam',
     id: 2,
     images: [
       "assets/images/painter1.jpg",
@@ -65,7 +65,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Raj Kumar',
     id: 3,
     images: [
       "assets/images/electrician1.jpg",
@@ -84,7 +84,7 @@ List<Product> demoProducts = [
     isPopular: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Santosh Parmar',
     id: 4,
     images: [
       "assets/images/plumber1.jpg",
@@ -102,7 +102,7 @@ List<Product> demoProducts = [
     isFavourite: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Kushal Rao',
     id: 5,
     images: [
       "assets/images/cleaner1.jpg",
@@ -120,7 +120,7 @@ List<Product> demoProducts = [
     isFavourite: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Kuldeep Sen',
     id: 6,
     images: [
       "assets/images/maid1.jpg",
@@ -138,7 +138,7 @@ List<Product> demoProducts = [
     isFavourite: true,
   ),
   Product(
-    name: 'John Doe',
+    name: 'Mo Salah',
     id: 7,
     images: [
       "assets/images/driver1.jpg",

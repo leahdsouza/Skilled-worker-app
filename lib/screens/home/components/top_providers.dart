@@ -14,27 +14,28 @@ class Top_Providers extends StatelessWidget {
     return Padding(
       padding:  EdgeInsets.symmetric(horizontal: 10,vertical: 10),
       child: Column(
+        
         children: [
           ReviewsCard(
-                    color: Colors.indigoAccent,
+                     color: Colors.grey.shade500,
                     name: 'Jane Doe',
                     description: 'Good Service',
                     rating: 4.2,
                   ),
         ReviewsCard(
-                    color: Colors.indigoAccent,
+                    color: Colors.grey.shade500,
                     name: 'John',
                     description: 'Good Service',
                     rating: 4.0,
                   ),
         ReviewsCard(
-                    color: Colors.indigoAccent,
+                      color: Colors.grey.shade500,
                     name: 'Sanjay',
                     description: 'Excellent',
                     rating: 5.0,
                   ),
        ReviewsCard(
-                    color: Colors.indigoAccent,
+                     color: Colors.grey.shade500,
                     name: 'Rahul',
                     description: 'Good Service',
                     rating: 4.1,

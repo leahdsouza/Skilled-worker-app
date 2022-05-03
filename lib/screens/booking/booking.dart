@@ -172,7 +172,7 @@ class WorkerProfile extends StatelessWidget {
                   ),
                   border: OutlineInputBorder(),
                 ),
-                obscureText: true,
+                obscureText: false,
               ),
           SizedBox(height: 10,),
           Column(
@@ -201,6 +201,7 @@ class WorkerProfile extends StatelessWidget {
                     description: 'Good Service',
                     rating: 4.2,
                   ),
+                  SizedBox(height: 10,),
                   ReviewsCard(
                     color: Color(0xffececec),
                     name: 'Sherlock ',

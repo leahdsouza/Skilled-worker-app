@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:skilled_worker_app/models/user.dart';
 import 'package:skilled_worker_app/screens/authenticate/authenticate.dart';
 import 'package:skilled_worker_app/screens/authenticate/create_new_account.dart';
+import 'package:skilled_worker_app/screens/booking/booking.dart';
 import 'package:skilled_worker_app/screens/profile/profile_wrapper.dart';
 import 'package:skilled_worker_app/screens/settings/settings.dart';
 import 'package:skilled_worker_app/screens/authenticate/login.dart';
@@ -49,6 +50,7 @@ class Wrapper extends StatelessWidget {
           '/homeState': (context) => HomeState(),
           '/workerlist': (context) => WorkerListScreen(),
           '/about':(context) => About(),
+          '/workerProfile':(context) => WorkerProfile(),
         },
       );
     }

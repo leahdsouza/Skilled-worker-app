@@ -8,6 +8,9 @@ import '../models/user.dart';
 
 class FeedbackDb {
 
+  List<Map> listOfMaps = [
+   {"name":"Monaj Yadav","rate":400,"category":"Plumber","address":"42 -b-c Mahavir Bldg Navneet Showroom Bhandark Matunga, Mumbai,Mumbai,400019,India"},
+  ];
 
   var uuid = Uuid();
 
@@ -22,6 +25,33 @@ class FeedbackDb {
 
     });
   }
+
+  Future updateWorkerData(String name, int rate, String category, String address) async {
+    return await FirebaseFirestore.instance.collection("worker").doc(uuid.v4()).set({
+      "name":name,
+      "rate":rate,
+      "category": category,
+      "address": address
+
+    });
+  }
+
+  Future addWorkerData() async{
+
+    for (var i = 0; i < listOfMaps.length; i++) {
+      // TO DO
+      var currentElement = listOfMaps[i];
+      print(i);
+
+      await updateWorkerData(currentElement["name"], currentElement["rate"], currentElement["category"], currentElement["address"]);
+      print(currentElement["name"]);
+      print(currentElement["rate"]);
+      print(currentElement["category"]);
+      print(currentElement["address"]);
+    }
+
+  }
+
 
 
 

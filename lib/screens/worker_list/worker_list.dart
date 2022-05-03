@@ -49,7 +49,11 @@ class _WorkerListScreenState extends State<WorkerListScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Worker List",style: TextStyle(fontSize: 22 , color: Colors.white, fontWeight: FontWeight.bold)),
+        centerTitle: true,
+        backgroundColor: Color(0xFF210D41),
+      ),
       body: FutureBuilder<List<Destination>>(
         future: getDestinationList(), // function where you call your api
               builder: (BuildContext context, AsyncSnapshot<List<Destination>> snapshot) { // AsyncSnapshot<Your object type>

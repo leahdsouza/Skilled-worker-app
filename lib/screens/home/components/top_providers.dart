@@ -15,7 +15,7 @@ class Top_Providers extends StatelessWidget {
       child: Column(
         children: [
           FreelancerCard(
-            color: Colors.amber,
+            color: Colors.indigoAccent,
             name: 'Jane Doe',
             image: AssetImage(
               'assets/images/consultant.jpg',
@@ -25,7 +25,7 @@ class Top_Providers extends StatelessWidget {
             comments: 15,
           ),
           FreelancerCard(
-        color: Color(0xffb8c1ff),
+        color: Colors.indigoAccent,
         name: 'Sherlock Holmes',
         image: AssetImage(
           'assets/images/sherlock.jpg',
@@ -35,7 +35,7 @@ class Top_Providers extends StatelessWidget {
         comments: 15,
       ),
       FreelancerCard(
-        color: Color(0xffffb8fa),
+        color: Colors.indigoAccent,
         name: 'Dasha Taraan',
         image: AssetImage(
           'assets/images/taraan.jpg',
@@ -45,7 +45,7 @@ class Top_Providers extends StatelessWidget {
         comments: 15,
       ),
       FreelancerCard(
-        color: Color(0xffffb8fa),
+        color: Colors.indigoAccent,
         name: 'Joker',
         image: AssetImage(
           'assets/images/joker.jpg',

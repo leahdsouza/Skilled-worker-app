@@ -23,6 +23,9 @@ class _WorkerCardState extends State<WorkerCard> {
 
 
     return Card(
+      color: Colors.indigoAccent,
+      shadowColor: Colors.black,
+      
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -34,28 +37,35 @@ class _WorkerCardState extends State<WorkerCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [
-                Image(
-                  height: 100,
-                  width: 100,
-                  image: NetworkImage('https://c8.alamy.com/comp/M4KDT8/handsome-indian-carpenter-or-wood-worker-in-action-isolated-over-white-M4KDT8.jpg'),
+                CircleAvatar(
+                  backgroundImage: NetworkImage("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"),
+                  // backgroundImage: AssetImage('assets/profile_image.webp'),
+                  radius: 45,
                 ),
-                // SizedBox(width: 10,),
+                // Image(
+                //   height: 100,
+                //   width: 100,
+                //   image: AssetImage("assets/images/profile_image.webp"),
+                //   // image: NetworkImage('https://c8.alamy.com/comp/M4KDT8/handsome-indian-carpenter-or-wood-worker-in-action-isolated-over-white-M4KDT8.jpg'),
+                // ),
+                SizedBox(width: 20,),
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(widget.worker.name,
-                      style: TextStyle(fontSize: 16,
-                          color: Colors.black,
+                      style: TextStyle(fontSize: 18,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold),
+                          
                     ),
                     //
-                    SizedBox(height: 5,),
+                    SizedBox(height: 15,),
                     Text(widget.worker.category,
                       style: TextStyle(fontSize: 16,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
+                          color: Colors.grey.shade300,
+                          fontWeight: FontWeight.normal),
                     ),
                     Row(
                       children: [
@@ -63,8 +73,8 @@ class _WorkerCardState extends State<WorkerCard> {
                         SizedBox(width: 6,),
                         Text(
                           "${widget.worker.distance.toStringAsFixed(2)} Km",
-                          style: TextStyle(fontSize: 16,
-                              color: Colors.black,
+                          style: TextStyle(fontSize: 15,
+                              color: Colors.grey.shade200,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -73,7 +83,8 @@ class _WorkerCardState extends State<WorkerCard> {
                     SizedBox(height: 5,),
                     Text("\₹${widget.worker.rate}",
                       style: TextStyle(fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                          color: Colors.black,
+                          fontSize: 16,),
                     ),
 
                   ],

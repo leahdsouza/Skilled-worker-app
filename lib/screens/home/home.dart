@@ -91,7 +91,12 @@ class _HomeState extends State<Home> {
                       children: <Widget>[
                         Text(
                           'Top rated providers',
-                          style: kCategoryTextStyle,
+                          // style: kCategoryTextStyle,
+                          style: TextStyle(fontSize: 20,
+                          color: Color(0xff626262),
+                          fontWeight: FontWeight.w600,
+                          ),
+                          
                         ),
                       ],
                     ),

@@ -33,7 +33,7 @@ class _WorkerCardState extends State<WorkerCard> {
         });
       },
       child: Card(
-      color: Colors.indigoAccent,
+      color: Colors.grey[100],
       shadowColor: Colors.black,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -56,7 +56,7 @@ class _WorkerCardState extends State<WorkerCard> {
                   //   width: 100,
                   //   image: NetworkImage('https://c8.alamy.com/comp/M4KDT8/handsome-indian-carpenter-or-wood-worker-in-action-isolated-over-white-M4KDT8.jpg'),
                   // ),
-                  // SizedBox(width: 10,),
+                  SizedBox(width: 20,),
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -64,25 +64,29 @@ class _WorkerCardState extends State<WorkerCard> {
                   children: [
                     Text(widget.worker.name,
                       style: TextStyle(fontSize: 18,
-                          color: Colors.white,
+                          color: Color(0xFF210D41),
                           fontWeight: FontWeight.bold),
 
                     ),
                     //
-                    SizedBox(height: 15,),
+                    SizedBox(height: 3,),
                     Text(widget.worker.category,
                       style: TextStyle(fontSize: 16,
-                          color: Colors.grey.shade300,
-                          fontWeight: FontWeight.normal),
+                          color: Colors.deepPurple.shade600,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 0.8
+                      ),
                     ),
+                    SizedBox(height: 3,),
                     Row(
                       children: [
-                        Icon(Icons.location_on_sharp, size: 22),
+                        Icon(Icons.location_on_sharp,color: Colors.red, size: 22),
                         SizedBox(width: 6,),
                         Text(
                           "${widget.worker.distance.toStringAsFixed(2)} Km",
                           style: TextStyle(fontSize: 15,
-                              color: Colors.grey.shade200,
+                              color: Colors.grey.shade600,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -129,6 +133,6 @@ class _WorkerCardState extends State<WorkerCard> {
           ],
         ),
       ),
-    );
+    ));
   }
 }

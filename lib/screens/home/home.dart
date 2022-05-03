@@ -6,7 +6,12 @@ import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 import 'package:skilled_worker_app/screens/home/components/PopularServices.dart';
 
 import 'components/SpecialOffer.dart';
+import 'components/TopContainer.dart';
+import 'components/constant.dart';
+import 'components/freelancer_card.dart';
 import 'components/section_tile.dart';
+
+import 'components/top_providers.dart';
 
 
 
@@ -52,79 +57,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(height: 10,),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  height: 170,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/cleaning.jpg',
-                      ),
-                      fit: BoxFit.fitWidth,
-                    ),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'We clean like',
-                        style: TextStyle(
-                          color: Color(0xff040f48),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Text(
-                            'Never',
-                            style: TextStyle(
-                              color: Color(0xff040f48),
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            'Been Dirty',
-                            style: TextStyle(
-                              color: Color(0xffe2345d),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w900,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      RaisedButton(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        color: Color(0xff040f48),
-                        // shape: kShape,
-                        onPressed: () {},
-                        child: const Text(
-                          'Book now',
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              TopContainer(),
               SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20.0,5,20,5),
@@ -151,12 +84,38 @@ class _HomeState extends State<Home> {
               PopularServices(),
               SizedBox(height: 30,),
 
-            ],
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          'Top rated providers',
+                          // style: kCategoryTextStyle,
+                          style: TextStyle(fontSize: 20,
+                          color: Color(0xff626262),
+                          fontWeight: FontWeight.w600,
+                          ),
+                          
+                        ),
+                      ],
+                    ),
+              ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Top_Providers(),
+                  
+                ],
+              ),
+            ),
+
+            
           ),
-        ),
-      ),
-      // bottomNavigationBar: BottomNavigation(),
     );
+      
+      // bottomNavigationBar: BottomNavigation(),
+    
   }
 }
 

@@ -19,7 +19,7 @@ class _HomeStateState extends State<HomeState> {
 
   final screens = <Widget>[
     Home(),
-    SettingPage(),
+    // s
     SettingPage(),
     ProfileWrapper(),
 
@@ -48,11 +48,11 @@ class _HomeStateState extends State<HomeState> {
             label: 'Home',
             backgroundColor: Color(0xFF210D41),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.forum),
-            label: 'Chats',
-            backgroundColor: Color(0xFF210D41),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.forum),
+          //   label: 'Chats',
+          //   backgroundColor: Color(0xFF210D41),
+          // ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',

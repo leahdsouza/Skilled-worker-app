@@ -35,11 +35,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
           label: 'Home',
           backgroundColor: Color(0xFF210D41),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.forum),
-          label: 'Chats',
-          backgroundColor: Color(0xFF210D41),
-        ),
+        // BottomNavigationBarItem(
+        //   icon: Icon(Icons.forum),
+        //   label: 'Chats',
+        //   backgroundColor: Color(0xFF210D41),
+        // ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Settings',

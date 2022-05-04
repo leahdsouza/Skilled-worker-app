@@ -84,7 +84,7 @@ class WorkerProfile extends StatelessWidget {
                       children: <Widget>[
                         Icon(Icons.location_on_sharp,color: Colors.amber,
                         size: 30,),
-                        Text("${distance.toStringAsFixed(2)} Km",
+                        Text( distance == 0.0 ? "":"${distance.toStringAsFixed(2)} Km",
                           style: TextStyle(
                           color: Color(0xFF210D41),
                           letterSpacing: 1.0,

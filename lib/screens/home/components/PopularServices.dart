@@ -9,12 +9,14 @@ class PopularServices extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SectionTitle(
-            text: "Popular Products",
+            text: "Popular",
             press: () {}
         ),
         SizedBox(height: 20,),

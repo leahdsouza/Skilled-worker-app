@@ -23,19 +23,29 @@ class SpecialOffer extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/Carpenter.jpg",
                 category: "Carpenter",
-                location: "Mumbai",
-                press: () {},
+                location: "Rs.50 Off",
+                press: () {
+
+                  Navigator.pushNamed(context, '/workerlist',arguments: {
+                    'category': "Carpenter"
+                  });
+                },
               ),
               SpecialOfferCard(
                 image: "assets/images/Painter.jpg",
                 category: "Painter",
-                location: "Mumbai",
-                press: () {},
+                location: "Free Recommendation",
+                press: () {
+                  Navigator.pushNamed(context, '/workerlist',arguments: {
+                    'category': "Painter"
+                  });
+
+                },
               ),
               SpecialOfferCard(
                 image: "assets/images/electrician.jpg",
                 category: "Electrician",
-                location: "Mumbai",
+                location: "24/7 Support",
                 press: () {
 
                   Navigator.pushNamed(context, '/workerlist',arguments: {

@@ -90,7 +90,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          'Top rated providers',
+                          'Top Rated Providers',
                           // style: kCategoryTextStyle,
                           style: TextStyle(fontSize: 20,
                           color: Color(0xff626262),

@@ -6,6 +6,7 @@ import 'package:skilled_worker_app/screens/settings/settings.dart';
 import 'package:skilled_worker_app/screens/authenticate/create_new_account.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:skilled_worker_app/services/location.dart';
+import 'package:skilled_worker_app/services/workerDb.dart';
 import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 import 'package:skilled_worker_app/services/FeedbackDb.dart';
 import 'package:skilled_worker_app/services/location.dart';
@@ -162,6 +163,10 @@ class _FeedbackPageState extends State<FeedbackPage> {
                       // List<Location> locations = await locationFromAddress('22 Dopp Rly Stn Silver Line Chs D G Mkt Bhayander , Mumbai,Mumbai,401105,India');
                       // print(locations[0].latitude);
                       // await db.addWorkerData();
+
+                      WorkerDb worker = new WorkerDb();
+                      List data = await worker.getWorkerLowestRate();
+                      print(data);
 
                       // Locationdb loc = new Locationdb();
                       //

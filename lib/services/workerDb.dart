@@ -26,6 +26,14 @@ class WorkerDb{
 
     return allData;
   }
+  Future<List> getWorkerLowestRate() async{
+
+    QuerySnapshot querySnapshot =await userCollection.orderBy("rate", descending: true).limit(10).get() as QuerySnapshot<Object?>;
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    return allData;
+  }
+
 
 
   Future updateWorkerData(String name, int rate, String category, String address) async {

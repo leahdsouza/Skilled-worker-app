@@ -30,32 +30,32 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(20,20,20,10),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 350,
-                      alignment: Alignment.center,
-
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: TextField(
-                        onChanged: (value) => print(value),
-                        decoration: InputDecoration(
-                            contentPadding: EdgeInsets.all(10),
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            hintText: "Search product",
-                            prefixIcon: Icon(Icons.search)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.fromLTRB(20,20,20,10),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //         width: 350,
+              //         alignment: Alignment.center,
+              //
+              //         decoration: BoxDecoration(
+              //           color: Colors.grey.withOpacity(0.1),
+              //           borderRadius: BorderRadius.circular(15),
+              //         ),
+              //         child: TextField(
+              //           onChanged: (value) => print(value),
+              //           decoration: InputDecoration(
+              //               contentPadding: EdgeInsets.all(10),
+              //               border: InputBorder.none,
+              //               focusedBorder: InputBorder.none,
+              //               enabledBorder: InputBorder.none,
+              //               hintText: "Search product",
+              //               prefixIcon: Icon(Icons.search)),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               SizedBox(height: 5,),
               TopContainer(),
               SizedBox(height: 10,),

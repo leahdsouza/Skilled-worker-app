@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skilled_worker_app/screens/worker_list/Destination.dart';
+
 import 'product_card.dart';
 
 class ProductCard extends StatelessWidget {

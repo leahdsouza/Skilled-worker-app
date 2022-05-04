@@ -56,9 +56,9 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 5,),
               TopContainer(),
-              SizedBox(height: 20,),
+              SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.fromLTRB(20.0,5,20,5),
                 child: Row(
@@ -66,10 +66,10 @@ class _HomeState extends State<Home> {
                   children: [
                     Text(
                       'Home Services',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
+                      style: TextStyle(fontSize: 20,
+                          color: Color(0xff626262),
+                          fontWeight: FontWeight.w600,
+                          ),
 
                     ),
 
@@ -78,11 +78,13 @@ class _HomeState extends State<Home> {
               ),
               Categories(),
               // PopularProducts(),
+              SizedBox(height: 10,),
+              SpecialOffer(),
               SizedBox(height: 20,),
               SpecialOffer(),
               SizedBox(height: 30,),
               PopularServices(),
-              SizedBox(height: 30,),
+              SizedBox(height: 20,),
 
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 20,vertical: 10),
@@ -90,7 +92,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          'Top Rated Providers',
+                          'Customer Reviews',
                           // style: kCategoryTextStyle,
                           style: TextStyle(fontSize: 20,
                           color: Color(0xff626262),

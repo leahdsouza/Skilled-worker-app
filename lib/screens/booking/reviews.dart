@@ -57,39 +57,38 @@ Widget build(BuildContext context) {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     name,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(color: Colors.black,fontSize: 23,fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top:10,left: 10),
+                  padding: const EdgeInsets.only(top:5,left: 10),
                   child: Text(
                     description,
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
+                     style: TextStyle(fontSize: 16,
+                          color: Colors.grey.shade900,
+                          fontWeight: FontWeight.normal),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 Padding(
-                  padding: const EdgeInsets.only(top:10,left: 10,bottom: 10),
+                  padding: const EdgeInsets.only(top:7,left: 10,bottom: 10),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       FaIcon(
                         FontAwesomeIcons.star,
-                        color: kSmallDescColor,
+                        color: Colors.black,
                         size: 15,
+                        
                       ),
-                      SizedBox(
-                        width: 2,
-                      ),
-                      Text(rating.toString(), style: kSmallDescStyle),
                       SizedBox(
                         width: 10,
+                      ),
+                      Text(rating.toString(), style: TextStyle(fontSize: 15,
+                              color: Colors.grey.shade800,
+                              fontWeight: FontWeight.bold),),
+                      SizedBox(
+                        width: 5,
                       ),
                       SizedBox(
                         width: 2,

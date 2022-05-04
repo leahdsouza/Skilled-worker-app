@@ -262,6 +262,7 @@ class _WorkerProfileState extends State<WorkerProfile> {
                         print(docID);
                         await db.addReview(docID, reviewController.text, currentUser.name,ratingText);
                         print(ratingText);
+                        reviewController.text = '';
                         setState(() {
 
                         });

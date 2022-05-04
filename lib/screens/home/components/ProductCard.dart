@@ -35,21 +35,21 @@ class ProductCard extends StatelessWidget {
             const SizedBox(height: 5,),
             Text(
               product.name,
-              style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18,letterSpacing: 1.2),
+              style: TextStyle(color: Colors.black87,fontWeight: FontWeight.bold,fontSize: 18,),
             ),
             SizedBox(height: 1,),
             Text(
               product.title,
-              style: TextStyle(color: Colors.black,letterSpacing: 0.8),
+              style: TextStyle(color: Colors.black87,letterSpacing: 0.8),
               maxLines: 2,
 
             ),
             Text(
               "\₹${product.price}",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: Colors.blueAccent,
+                color: Color(0xFF210D41),
               ),
             ),
           ],

@@ -61,10 +61,12 @@ class WorkerDb{
     });
   }
 
-  Future addReview(String docID,String review,String username) async{
+  Future addReview(String docID,String review,String username,double rating) async{
     await FirebaseFirestore.instance.collection("workers").doc(docID).collection("reviews").doc(uuid.v4()).set({
       "review":review,
-      "username":username
+      "username":username,
+      "rating":rating,
+
     });
   }
   Future<List> getAllReviews(String docID) async{

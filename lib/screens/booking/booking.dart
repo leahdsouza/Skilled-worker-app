@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:skilled_worker_app/models/user_detail.dart';
 
@@ -23,6 +24,7 @@ class WorkerProfile extends StatefulWidget {
 
 class _WorkerProfileState extends State<WorkerProfile> {
   final reviewController = TextEditingController();
+  late double ratingText ;
 
   Future<List> getReviewsList() async {
     final arg = ModalRoute.of(context)!.settings.arguments as Map;
@@ -192,6 +194,29 @@ class _WorkerProfileState extends State<WorkerProfile> {
                 SizedBox(
                   height: 10,
                 ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: RatingBar.builder(
+                    initialRating: 3,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemCount: 5,
+                    itemBuilder: (context, _) => Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                    ),
+                    onRatingUpdate: (rating) {
+                      setState(() {
+
+                        // print(rating);
+                        ratingText = rating ;
+
+                      });
+
+                    },
+                  ),
+                ),
                 TextFormField(
                   validator: (String? val) {
                     if (val!.isEmpty){
@@ -235,8 +260,8 @@ class _WorkerProfileState extends State<WorkerProfile> {
                         WorkerDb db = new WorkerDb();
                         var docID = await db.getWorker(name);
                         print(docID);
-                        await db.addReview(docID, reviewController.text, currentUser.name);
-
+                        await db.addReview(docID, reviewController.text, currentUser.name,ratingText);
+                        print(ratingText);
                         setState(() {
 
                         });
@@ -287,7 +312,7 @@ class _WorkerProfileState extends State<WorkerProfile> {
                                     color: Color(0xffececec),
                                     name: snapshot.data![index]['username'],
                                     description: snapshot.data![index]['review'],
-                                    rating: 4.2,
+                                    rating: snapshot.data![index]['rating'] == null ? 3.0 : snapshot.data![index]['rating'],
                                   );
                                 },
                               );

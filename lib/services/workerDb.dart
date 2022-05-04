@@ -26,6 +26,21 @@ class WorkerDb{
 
     return allData;
   }
+
+  Future<String> getWorker(String name) async{
+
+    QuerySnapshot querySnapshot =await userCollection.where("name", isEqualTo: name).get() as QuerySnapshot<Object?>;
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+    // for (var snapshot in querySnapshot.docs) {
+    //   var documentID = snapshot.id;
+    //   print(documentID.runtimeType);// <-- Document ID
+    // }
+    var docID = querySnapshot.docs[0].id;
+    print("Document id:${docID}");
+    print(allData);
+    return docID;
+  }
+
   Future<List> getWorkerLowestRate() async{
 
     QuerySnapshot querySnapshot =await userCollection.orderBy("rate", descending: true).limit(10).get() as QuerySnapshot<Object?>;
@@ -44,6 +59,22 @@ class WorkerDb{
       "address": address
 
     });
+  }
+
+  Future addReview(String docID,String review,String username) async{
+    await FirebaseFirestore.instance.collection("workers").doc(docID).collection("reviews").doc(uuid.v4()).set({
+      "review":review,
+      "username":username
+    });
+  }
+  Future<List> getAllReviews(String docID) async{
+
+
+    QuerySnapshot querySnapshot =await FirebaseFirestore.instance.collection("workers").doc(docID).collection("reviews").get() as QuerySnapshot<Object?>;
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    print(allData);
+    return allData;
   }
 
   Future addWorkerData() async{

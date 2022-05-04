@@ -81,8 +81,8 @@ class _HomeState extends State<Home> {
               SizedBox(height: 10,),
               SpecialOffer(),
               SizedBox(height: 20,),
-              SpecialOffer(),
-              SizedBox(height: 30,),
+              // SpecialOffer(),
+              // SizedBox(height: 30,),
               PopularServices(),
               SizedBox(height: 20,),
 

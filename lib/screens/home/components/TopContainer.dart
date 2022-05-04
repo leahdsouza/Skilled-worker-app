@@ -67,7 +67,11 @@ class TopContainer extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 30),
               color: Color(0xff040f48),
               // shape: kShape,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/workerlist',arguments: {
+                  'category': "Cleaning"
+                });
+              },
               child: const Text(
                 'Book now',
                 style: TextStyle(

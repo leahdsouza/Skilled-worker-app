@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:skilled_worker_app/pages/settings.dart';
-import 'package:skilled_worker_app/pages/bottom_navigation.dart';
+import 'package:skilled_worker_app/screens/settings/settings.dart';
+import 'package:skilled_worker_app/shared/bottom_navigation.dart';
 import 'package:expandable/expandable.dart';
 
 
@@ -33,16 +33,18 @@ class _HelpPageState extends State<HelpPage> {
         backgroundColor: Color(0xFF210D41),
         title: Text("Help", style: TextStyle(fontSize: 22 , color: Colors.white, fontWeight: FontWeight.bold)),
       ),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(10,10,10,10),
-          child: Column(
-            children:[
-              for (var question in questions ) dropdowncard(question)
-            ]
-          )
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(10,10,10,10),
+            child: Column(
+              children:[
+                for (var question in questions ) dropdowncard(question)
+              ]
+            )
+          ),
+      
         ),
-
       ),
       // bottomNavigationBar: BottomNavigation()
     );

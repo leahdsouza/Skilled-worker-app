@@ -31,15 +31,15 @@ class _SettingPageState extends State<SettingPage> {
             sections: [
               SettingsSection(
                   tiles: [
-                  SettingsTile(
-
-                    title: Text('Register as Worker'),
-                    leading: Icon(Icons.how_to_reg,
-                        color: Color(0xFF210D41)),
-                    onPressed: (BuildContext context) {
-                      Navigator.pushNamed(context, '/registerWorker');
-                    },
-                  ),
+                  // SettingsTile(
+                  //
+                  //   title: Text('Register as Worker'),
+                  //   leading: Icon(Icons.how_to_reg,
+                  //       color: Color(0xFF210D41)),
+                  //   onPressed: (BuildContext context) {
+                  //     Navigator.pushNamed(context, '/registerWorker');
+                  //   },
+                  // ),
                   SettingsTile(
                     title: Text('Notifications'),
                     leading: Icon(Icons.notifications,

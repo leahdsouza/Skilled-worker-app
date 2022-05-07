@@ -132,7 +132,7 @@ class _WorkerListScreenState extends State<WorkerListScreen> {
   }
   distanceCalculation() {
     for(var d in destinations){
-      var km = getDistanceFromLatLonInKm(19.391928,72.839729, d.lat,d.lng);
+      var km = getDistanceFromLatLonInKm(19.233780,72.856940, d.lat,d.lng);
       // var m = Geolocator.distanceBetween(position.latitude,position.longitude, d.lat,d.lng);
       // d.distance = m/1000;
       d.distance = km;

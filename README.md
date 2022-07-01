@@ -39,7 +39,7 @@ Hence our project will include the following features:
 
 ## Contributor
 
-- [Steve Gonasalves](https://github.com/leahdsouza)
+- [Leah Dsouza](https://github.com/leahdsouza)
 - [Orvil D'silva](https://github.com/orvil1026)
 - [Jason Dsouza](https://github.com/JasonD13)
 - [Ralph Dsouza](https://github.com/RD0410)
